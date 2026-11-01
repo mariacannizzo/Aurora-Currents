@@ -1,100 +1,155 @@
 # Aurora Currents
-### Interactive Northern and Southern Lights: Creative Coding Project
 
-## Project Overview
+> An interactive creative coding project that recreates the movement, colours and atmosphere of the Northern and Southern Lights using Python Mode in Processing.
 
-Aurora Currents is an interactive digital artwork developed using **Processing Python Mode**. The project explores how programming can recreate the natural beauty, colours and movement of the Northern and Southern Lights.
+## Table of Contents
 
-Through mathematical calculations, Perlin noise, layered colour gradients and interactive animations, the program generates flowing aurora curtains across a night sky.
+- [General Information](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-The project includes two visual variations:
-- **Northern Lights:** Green, blue, turquoise and purple tones.
-- **Southern Lights:** Pink, orange, yellow and purple tones.
+## General Information
 
-Both versions use similar programming principles while exploring different visual atmospheres.
+Aurora Currents is a creative coding project developed using Processing Python Mode. It explores how programming can be used to recreate natural phenomena through digital animation and interactive visual effects.
 
-## Key Features
+The project was inspired by the Northern and Southern Lights, particularly their flowing movements, vibrant colour transitions and atmospheric appearance.
 
-### 1. Flowing Aurora Curtains
-Multiple overlapping light curtains move continuously across the sky. Perlin noise, sine calculations and time-based variables create gradual changes in their positions, heights and shapes, producing organic movement.
+The main purpose was to investigate how mathematical calculations, Perlin noise, colour interpolation and interactive programming could transform simple graphical elements into a dynamic digital artwork.
 
-### 2. Colour Gradients and Transparency
-RGB colour palettes and linear interpolation (`lerp()`) create smooth transitions between colours. Alpha transparency allows different layers to blend together, producing a luminous appearance.
+Two variations were developed:
 
-### 3. Interactive Mouse Movement
-Moving the mouse across the sky influences the aurora's movement. Smoothed cursor coordinates and a displacement grid allow the lights to respond gradually rather than shifting abruptly.
+- **Northern Lights:** Featuring green, turquoise, blue and purple colour palettes.
+- **Southern Lights:** Featuring warmer pink, orange, yellow and purple tones.
 
-### 4. Mouse-Click Effects
-Clicking the canvas creates a glowing ripple that travels through the aurora, adding another form of interaction.
+The project also provided an opportunity to develop my understanding of programming concepts through experimentation, debugging and iterative refinement.
 
-### 5. Animated Environment
-The scene includes twinkling stars, a moon, mountains, atmospheric effects and water reflections. These elements help establish depth and create a more immersive environment.
+## Technologies Used
 
-### 6. Water Reflections
-The aurora is reflected across the water using graphics buffers and mathematical distortion. Sine-based movements create a subtle rippling effect.
+- **Processing**: Creative coding environment
+- **Python Mode for Processing**: Programming language and execution environment
+- **Python `math` module**: Mathematical calculations for movement and wave effects
+- **Processing graphics functions**: Rendering shapes, colours, transparency and animation
 
-## Technologies and Programming Concepts
+## Features
 
-**Software:** Processing with Python Mode
+The main features of Aurora Currents include:
 
-**Language:** Python (Processing Python Mode)
+- **Animated aurora curtains:** Multiple overlapping layers that move continuously using Perlin noise and mathematical calculations.
+- **Colour gradients:** RGB values, interpolation and alpha transparency create smooth transitions and glowing effects.
+- **Interactive mouse movement:** Moving the cursor across the sky influences and disperses the aurora.
+- **Mouse-click interaction:** Clicking generates a glowing ripple through the curtains.
+- **Autonomous animation:** The aurora continues flowing naturally when the mouse is stationary.
+- **Atmospheric environment:** Twinkling stars, a moon, distant mountains, clouds and snowfall.
+- **Water reflections:** Animated reflections that use mathematical distortion to simulate movement across the water.
+- **Two visual variations:** Northern and Southern Lights versions using different colour palettes.
 
-The project uses:
-- Variables and data types
-- Functions and reusable code
-- `for` loops and conditional statements
-- Lists and classes
-- Perlin noise
-- Sine and other mathematical calculations
-- RGB colour values and alpha transparency
-- Mouse input and interactive events
-- Time-based animation
-- Graphics buffers and rendering optimisation
+## Screenshots
 
-## How to Run the Project
+Screenshots of the completed Northern and Southern Lights prototypes can be added here.
 
-1. Install Processing and ensure **Python Mode** is available.
-2. Download or clone this GitHub repository.
-3. Open the Northern Lights or Southern Lights `.pyde` sketch in Processing.
-4. Make sure Python Mode is selected.
-5. Click the **Run** button.
-6. Interact with the animation using your mouse.
+**Northern Lights**
 
-### Mouse Controls
+<img width="467" height="512" alt="Screenshot 2026-11-01 181138" src="https://github.com/user-attachments/assets/dabfb86a-6fc4-4c84-80cd-52cdebe18c5b" />
 
-| Action | Effect |
+**Southern Lights**
+
+<img width="468" height="527" alt="Screenshot 2026-11-01 181354" src="https://github.com/user-attachments/assets/7c24c3d1-a26f-4072-8305-d51720ddfa84" />
+
+These screenshots demonstrate the differences in colour palettes and visual atmosphere while highlighting the shared animation techniques.
+
+## Setup
+
+To run Aurora Currents, you will need:
+
+- Processing installed on your computer
+- Python Mode installed and selected within Processing
+- The project sketch files (`.pyde`)
+
+**Installation instructions:**
+
+1. Download or clone this repository from GitHub.
+2. Open Processing.
+3. Ensure that Python Mode is installed and selected.
+4. Open the relevant `.pyde` sketch file.
+5. Click the **Run** button to launch the program.
+
+Both versions can be run separately.
+
+## Usage
+
+Once the program is running, the aurora begins moving automatically.
+
+Users can interact with the artwork using their mouse.
+
+| User Action | Result |
 |---|---|
-| No mouse movement | Aurora continues flowing automatically |
-| Move mouse across the sky | Gently influences and disperses the aurora |
-| Click in the sky | Creates a glowing wave through the lights |
-| Move mouse across the water | Creates interactive water ripples |
+| Leave the mouse stationary | The aurora continues flowing naturally |
+| Move the mouse across the sky | The light curtains respond and disperse |
+| Click the sky | A glowing wave travels through the aurora |
+| Move the mouse across the water | Interactive ripples appear in the reflection |
 
-## Development Process
+The program uses smoothed mouse coordinates and displacement calculations to create gradual, flowing interactions.
 
-Aurora Currents was developed through experimentation, testing and iterative refinement.
+For example, this section of the Northern Lights code smooths the cursor's position:
 
-Early development focused on creating colour gradients and simple wave shapes. These experiments were gradually expanded into layered aurora curtains with independently animated movement.
+```python
+mx += (mouseX - mx) * follow
+my += (mouseY - my) * follow
+```
 
-One challenge involved balancing visual complexity with performance. Increasing the number of layers and graphical effects sometimes reduced the frame rate.
+Rather than immediately moving the aurora to the cursor's location, these calculations allow the interaction to respond progressively, making the movement appear more natural.
 
-Another challenge involved mouse responsiveness. Early interactions caused overly rapid or uneven movement. This was addressed by introducing smoothed mouse coordinates, gradually updated displacement values and more consistent animation timing.
+## Project Status
 
-The Southern Lights variation was developed by adapting the colour palettes while retaining the underlying animation structure.
+Project is: **Complete: university creative coding prototype.**
 
-## Future Improvements
+The Northern and Southern Lights variations have been developed, with the main animation, interaction and environmental effects implemented.
 
-Potential developments include:
-- Additional customisable colour palettes
-- User controls for animation speed and brightness
-- More varied aurora movements
-- Improved rendering performance
-- Additional interactive environmental effects
+The project was refined through multiple stages of testing, visual experimentation and debugging.
 
-## About the Project
+## Room for Improvement
 
-**Project:** Aurora Currents  
-**Project type:** Interactive digital artwork  
-**Programming environment:** Processing Python Mode  
-**Purpose:** University creative coding assignment
+Although the prototype achieves its main visual and interactive goals, there are still opportunities for improvement.
 
-Aurora Currents demonstrates how mathematical programming, experimentation and interactive design can be combined to transform code into a dynamic visual artwork.
+**Room for improvement:**
+
+- Further optimise rendering performance when multiple visual effects are active.
+- Refine the balance between mouse responsiveness and natural movement.
+- Increase variation between individual aurora curtains to create more realistic patterns.
+- Improve the organisation and documentation of the code for readability.
+
+**To do / Future Development:**
+
+- Introduce adjustable animation speeds and brightness controls.
+- Allow users to select and customise colour palettes.
+- Experiment with additional aurora movement patterns.
+- Develop a more immersive and responsive environment.
+
+## Acknowledgements
+
+Aurora Currents was inspired by the natural appearance and movement of the Northern and Southern Lights.
+
+The project was developed through experimentation with creative coding techniques and learning resources, including:
+
+- [Processing](https://processing.org/) — Creative coding environment and documentation.
+- [Processing Python Mode](https://py.processing.org/) — Python programming within Processing.
+- [futurecoder](https://futurecoder.io/) — Interactive Python learning exercises.
+- [Harvard CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/) — Python programming concepts.
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) — Practical Python programming reference.
+- Reas, C., & Fry, B. (2015). Getting started with Processing. Maker Media.
+- Zhang, Y., & Funk, M. (2023). Coding art: A guide to Unlocking Your Creativity with the Processing Language p5.js in Four Simple Steps. Apress.
+
+Peer feedback also contributed to the refinement of the animation, interaction and overall code structure.
+
+## Contact
+
+Created as part of a university Creative Coding assignment.
+
+For questions or feedback, please use the GitHub repository's Issues section.
